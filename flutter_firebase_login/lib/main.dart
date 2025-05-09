@@ -10,6 +10,7 @@ Future<void> main() async {
   runApp(
     MaterialApp(
       home: Home(),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
@@ -33,18 +34,19 @@ class _HomeState extends State<Home> {
 
       body: screens[selectIndex],
 
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.add), label: "Create"),
-        BottomNavigationBarItem(icon: Icon(Icons.read_more), label: "Read"),
-        BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Delete"),
-      ],
-      type: BottomNavigationBarType.fixed,
-      currentIndex: selectIndex,
-      onTap: (index){
-        setState(() {
-          selectIndex = index;
-        });
-      },
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: "Create"),
+          BottomNavigationBarItem(icon: Icon(Icons.read_more), label: "Read"),
+          BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Delete"),
+        ],
+        type: BottomNavigationBarType.fixed,
+        currentIndex: selectIndex,
+        onTap: (index){
+          setState(() {
+            selectIndex = index;
+         });
+        },
       ),
     );
   }
